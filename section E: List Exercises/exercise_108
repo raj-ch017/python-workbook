@@ -1,0 +1,70 @@
+# author: @raj-ch017
+
+# Exercise 108: Negatives, Zeros and Positives
+
+"""
+Create a program that reads integers from the user
+until a blank line is entered.
+
+Once all of the integers have been read, your program
+should display all of the negative numbers, followed
+by all of the zeros, followed by all of the positive
+numbers.
+
+Within each group the numbers should be displayed in
+the same order that they were entered by the user.
+
+For example, if the user enters the values:
+
+    3, -4, 1, 0, -1, 0 and -2 
+    
+Then your program should output the values:
+
+    -4, -1, -2, 0, 0, 3 and 1
+    
+Your program should display each value on it's own
+line.
+"""
+
+user_list = []
+flag = True
+
+while flag:
+    user_in = input("Enter a number: ")
+    
+    if user_in == "":
+        flag = False
+        
+    else:
+        user_list.append(int(user_in))
+        
+
+def list_group(input_list):
+    """
+    Takes a list of numbers and groups them in negatives,
+    zeros and positives.
+    """
+    
+    negative_list = []
+    zero_list = []
+    positive_list = []
+    output_list = []
+    
+    for ele in input_list:
+        
+        if ele < 0:
+            negative_list.append(ele)
+        elif ele == 0:
+            zero_list.append(ele)
+        else:
+            positive_list.append(ele)
+            
+    output_list.extend(negative_list)
+    output_list.extend(zero_list)
+    output_list.extend(positive_list)
+    
+    return output_list
+
+ordered_list = list_group(user_list)
+
+print('Initial list: {} | Ordered list: {}'.format(user_list,ordered_list))
