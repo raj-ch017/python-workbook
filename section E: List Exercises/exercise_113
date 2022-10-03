@@ -1,0 +1,76 @@
+# author: @raj-ch017
+
+# Exercise 113: Formatting a List
+
+"""
+When writing out a list of items in English, one normally
+seperates the items with commas.
+
+In addition, the word "and" is normally included before
+the last item, unless the list only contains one 
+item. Consider the following four list:
+
+    apples
+    apples and oranges
+    apples, oranges and bananas
+    apples, oranges, bananas and lemons
+    
+Write a function that takes a list of strings as its
+only parameter. Your function should return a string that
+contains all of the items in the list formatted in the 
+manner described previously as its only result.
+
+While the examples shown previously only include lists
+containing four elements or less, your function should
+behave correctly for lists of any length. 
+
+Include a main program that reads several items from 
+the user, formats them by calling your function, and then
+displays the result returned by the function.
+"""
+
+def format_string(user_input):
+    """
+    Input:
+        user_input: list of strings
+        
+    Output:
+        return_string: string formatted to represent
+        list of items.
+    """
+    
+    item_len = len(user_input)
+    return_string = ""
+    
+    if item_len == 1:
+        return_string = user_input[0]
+        return return_string
+        
+    elif item_len == 2:
+        return_string = "{} and {}".format(user_input[0],user_input[1])
+        return return_string
+           
+            
+    else:
+        for k in range(item_len):
+            if k != item_len - 1:
+                return_string = return_string + user_input[k] + ", "
+            else:
+                return_string = return_string[:-2]
+                return_string = return_string + " and " + user_input[k]
+                return return_string
+            
+
+flag = True
+item_list = []
+
+while flag:
+    
+    user_in = input("Enter a word: ")
+    
+    if user_in != "":
+        item_list.append(user_in)
+    else:
+        flag = False
+        
+print(format_string(item_list))
