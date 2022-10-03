@@ -1,0 +1,67 @@
+# author: @raj-ch017
+
+# Exercise 111: Only the Words
+
+"""
+In this exercise you will create a program that identifies
+all of the words in a string entered by the user.
+
+Begin by writing a function that takes a string of text
+as its only parameter. Your function should return a 
+list of words in the string with the punctuation marks
+at the edges of the words removed.
+
+The punctuation marks that you must remove include 
+commas, periods, question marks, hyphens, apostrophes,
+exclamation points, colons and semicolons. Do not
+remove punctuation marks that appear in the middle of 
+words, such as the apostrophes used to form a 
+contraction. 
+
+For example, if your function is provided with the 
+string 'Examples of contractions include: don't, isn't,
+and wouldn't.' then your function should return the
+list ["Examples", "of","contractions", "include",
+    "don't", "isn't", "and", "wouldn't"].
+    
+    
+    
+Write a main program that demonstrates your function.
+It should read a string from the user and display all
+of the words in the string with the punctuation marks
+removed. You will need to import your solution to 
+this exercise when completing exercise 158. As a result,
+you should ensure that your main program only runs
+when your file has not been imported into another
+program.
+    
+"""
+
+def only_words(input_string):
+    """
+    Input:
+        input_string: string of text
+        
+    Output:
+        string_list: list containing words in input_string
+        without punctuation marks.
+        
+    Punctuations that appear in the middle of words
+    are not removed.
+    """
+    
+    string_list = []
+    check_list = [',','.','?','-',"'",'!',':',';']
+    
+    for word in input_string.split():
+        
+        if word[-1] not in check_list:
+            string_list.append(word)
+        
+        elif word[-1] in check_list:
+            string_list.append(word[:-1])
+            
+    return string_list
+    
+user_str = input("Enter a text: ")
+print(only_words(user_str))
