@@ -1,0 +1,28 @@
+# Exercise 105: Reverse Order
+
+"""
+Write a program that reads integers from the user and 
+stores them in a list. Use 0 as sentinel value to mark
+the end of the input.
+Once all of the values have been read your program
+should display them (except for the 0) in reverse order
+with one value appearing on each line.
+"""
+
+
+num_list = []
+flag = True
+
+while flag:
+    
+    user_in = int(input("Enter an integer: "))
+    
+    if user_in != 0:
+        num_list.append(user_in)
+    
+    else:
+        flag = False
+        
+num_list.reverse()
+for ele in num_list:
+    print(ele)
