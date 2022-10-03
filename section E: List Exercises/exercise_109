@@ -1,0 +1,46 @@
+# author: @raj-ch017
+
+# Exercise 109: List of Proper Divisors
+
+"""
+A proper divisor of a positive integer (n) is a positive
+integer less than (n) which divides evenly into n.
+
+Write a function that computes all of the proper
+divisors of a positive integer. The integer will be
+passed to the function as it's only parameter.
+
+The function will return a list containing all of the
+proper divisors as its only result. Complete this 
+exercise by writing a main program that demonstrates 
+the function by reading a value from the user and 
+displaying the list of its proper divisors. Ensure 
+that your main program only runs when your solution has 
+not been imported into another file.
+"""
+
+def proper_divisors(n):
+    """
+        Input:
+            n - positive integer
+        
+        Output:
+            divisor_list - A list containing all of the
+            proper divisors of n
+    """
+    
+    divisor_list = []
+    
+    for value in range(1,n):
+        
+        if (n % value) == 0:
+            divisor_list.append(value)
+            
+    return divisor_list
+
+    
+# for run in range(1,101):
+#     print("{} | {}".format(run,proper_divisors(run)))
+
+user_in = int(input("Enter a positive integer: "))
+print("Proper Divisors of {} are: {}".format(user_in,proper_divisors(user_in)))
