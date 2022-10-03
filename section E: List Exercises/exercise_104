@@ -1,0 +1,29 @@
+# Exercise 104: Sorted Order
+
+"""
+Write a program that reads integers from the user and
+stores them in a list. Your program should continue 
+reading values until the user enters 0.
+Then it should display all of the values entered by
+the user (except for the 0) in order from smallest to 
+largest, with one value appearing on each line.
+Use either sort method or the sorted function to sort
+the list.
+"""
+
+num_list = []
+flag = True
+
+while flag:
+    
+    user_in = int(input("Enter an integer: "))
+    
+    if user_in != 0:
+        num_list.append(user_in)
+    
+    else:
+        flag = False
+        
+num_list.sort()
+for ele in num_list:
+    print(ele)
