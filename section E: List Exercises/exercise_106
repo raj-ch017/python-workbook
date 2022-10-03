@@ -1,0 +1,71 @@
+# Exercise 106: Remove Outliers
+
+"""
+When analysis data collected as a part of science
+experiment it may be desirable to remove the most
+extreme values before performing other calculations.
+
+Write a function that takes a list of values and an
+non-negative integer (n) as it's parameters.
+
+The function should create a new copy of the list with
+the (n) largest elements and the (n) smallest elements
+removed. Then it should return the new copy of the list
+as the function's only result. 
+The order of the elements in the returned list does not
+have to match the order of the elements in the 
+original list.
+
+Write a main program that demonstrates your function.
+Your function should read a list of numbers from the
+user and remove the two largest and two smallest values
+from it. Display the list with the outliers removed,
+followed by the original list.
+Your program should generate an appropriate error
+message if the user enters less than 4 values.
+"""
+
+user_num = int(input("How many entires will you make? "))
+
+if user_num >= 4:
+    
+    user_list = []
+    for val in range(user_num):
+        user_in = int(input("Enter a number: "))
+        user_list.append(user_in)
+        
+else:
+    print("Please enter atleast 4 values to test the \
+function")
+        
+        
+def list_remove(in_list,n):
+    """
+    in_list: list of values
+    n: non-negative integer quantity to indicate
+        removal of outliers
+    """
+
+    if n >= 0:
+
+        out_list = []
+
+        for k in range(n):
+
+            in_list.remove(max(in_list))
+            in_list.remove(min(in_list))
+
+        out_list = in_list[:]
+
+        return out_list
+
+    else:
+        print("Please enter a non-negative integer n")
+    
+
+#print(list_remove([25,22,21,14,4,7,5,29,55,61,71],3))
+
+test_list = list_remove(list(user_list),2)
+
+print("Initial list: {}".format(user_list))
+print("Updated list: {}".format(test_list))
