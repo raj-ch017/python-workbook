@@ -1,0 +1,57 @@
+# author: @raj-ch017
+
+# Exercise 107: Avoiding Duplicates
+
+"""
+In this exercise, you will create a program that reads
+words from the user until the user enters a blank
+line. After the user enters a blank line your
+program should display each word entered by the user
+exactly once. The words should be displayed in the
+same order that they were entered. For example,
+if the user enters:
+    
+    first 
+    second
+    first
+    third
+    second
+    
+then your program should display:
+
+    first
+    second
+    third
+"""
+
+user_list = []
+
+flag = True
+
+while flag:
+    
+    user_in = input("Enter a word: ")
+    
+    if user_in != "":
+        user_list.append(user_in)
+    
+    else:
+        flag = False
+        
+
+        
+def list_once(in_list):
+    """
+    Takes an input list (in_list) and returns a list
+    that consists of elements 
+    """
+    
+    out_list = []
+    
+    for ele in in_list:
+        if ele not in out_list:
+            out_list.append(ele)
+            
+    return out_list
+
+print(list_once(user_list))
