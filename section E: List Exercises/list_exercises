@@ -1,0 +1,19 @@
+"""
+List Exercises
+
+Lists help programmers manage larger amounts of data by
+allowing several (or even many) values to be stored in
+one variable.
+
+This makes it practical to solve larger problems that
+involve many data values. To solve the exercises in
+this chapter you should expect to:
+
+* Create a variable that holds a list of values
+* Modifly a list by appending, inserting, updating
+    and deleting elements
+* Search a list for a value
+* Display some or all of the values in a list
+* Write a function that takes a list as a parameter
+* Write a function that returns a list as its result
+"""
