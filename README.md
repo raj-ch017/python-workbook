@@ -129,3 +129,35 @@ learn to:
 - Update the value associated with a key in a dictionary
 - Iterate over all of the keys and/or values in a dictionary
 - Write functions that take dictionaries as parameters
+
+<h2>
+<p align = "center">
+Section G: File and Exception Exercises
+</p>
+</h2>
+
+Files allow us to work with data, without needing to enter it each time our program
+runs. Files also allow us to store results from our program in a more permanent manner. These features are often used when creating larger programs. When completing
+the exercises in this chapter, you should expect to:
+
+- Open a file for reading and/or writing
+- Read data from a file
+- Write data to a new file
+- Use values provided to the program as command line parameters
+- Detect and recover from errors such as attempting to open a file that doesn’t exist
+- Detect and recover from other errors that are not specifically related to files
+
+<h2>
+<p align = "center">
+Section H: Recursion Exercises
+</p>
+</h2>
+
+A recursive function is a function that calls itself. In this chapter, you will use
+recursive functions to solve a variety of problems. The programs that you write will
+help you learn to:
+
+- Identify the base case(s) for a recursive function
+- Identify the recursive case(s) for a recursive function
+- Write a non-trivial recursive function
+- Use a recursive function that you have written to solve a problem
