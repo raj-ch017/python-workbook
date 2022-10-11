@@ -1,0 +1,11 @@
+"""
+A recursive function is a function that calls itself. In this 
+chapter, you will use recursive functions to solve a variety of
+problems. The programs that you write will help you learn to:
+
+    * Identify the base case(s) for a recursive function
+    * Identify the recursive case(s) for a recursive function
+    * Write a non-trivial recursive function
+    * Use a recursive function that you have written to solve 
+      a problem 
+"""
