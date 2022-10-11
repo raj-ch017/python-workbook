@@ -1,0 +1,4 @@
+The exercises that appear in this chapter should all be completed using loops. In some cases the exercise specifies what type of loop to use. 
+In other cases you must make this decision yourself. Some of the exercises can be completed easily with both for loops and while loops. 
+Other exercises are much better suited to one type of loop than the other. In addition, some of the exercises require multiple loops.
+When multiple loops are involved, one loop might need to be nested inside the other. Carefully consider your choice of loops as you design your solution to each problem.
