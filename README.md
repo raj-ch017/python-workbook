@@ -137,7 +137,7 @@ Section G: File and Exception Exercises
 </h2>
 
 Files allow us to work with data, without needing to enter it each time our program
-runs. Files also allow us to store results from our program in a more permanent manner. These features are often used when creating larger programs. When completing
+runs. Files also allow us to store results from our program in a more permanent manner. These features are often used when creating larger programs. When completing
 the exercises in this chapter, you should expect to:
 
 - Open a file for reading and/or writing
