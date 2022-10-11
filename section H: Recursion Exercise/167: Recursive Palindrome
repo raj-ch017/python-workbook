@@ -1,0 +1,36 @@
+# author: @raj-ch017
+
+# Exercise 167: Recursive Palindrome
+
+"""
+The notion of a palindrome was introduced previously in Exercise 72.
+
+In this exercise, you will write a recursive function that determines
+whether or not a string is a palindrome. The empty strings is a 
+palindrome, as is any string containing only one character. Any
+longer string is a palindrome if it's first and last characters
+match, and if the string formed by removing the first and last
+characters is also a palindrome.
+
+Write a main program that reads a string from the user. Use your
+recursive function to determine whether or not the string is a 
+palindrome. Then display an appropriate message for the user
+"""
+
+def recur_Palindrome(input_string):
+    
+    if len(input_string) <= 1:
+        return True
+    elif input_string[0] == input_string[-1]:
+        return recur_Palindrome(input_string[1:-1])
+    else:
+        return False
+    
+
+user_str = input("Enter a string to check whether it's palindrome: ")
+out = recur_Palindrome(user_str)
+
+if out:
+    print("{} is palindrome!".format(user_str))
+else:
+    print("{} is not a palindrome!".format(user_str))
