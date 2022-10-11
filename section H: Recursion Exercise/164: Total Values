@@ -1,0 +1,23 @@
+# author: @raj-ch017
+
+# Exercise 164: Total the values
+
+"""
+Write a program that reads values from the user until a blank
+line is entered. Display the total of all of the values entered
+by the user (or 0.0 if the first value entered is a blank line).
+
+Complete this task using recursion. Your program may not use any
+loops.
+"""
+
+def recursive_total():
+    
+    user_in = input("Enter a number: ")
+    
+    if user_in == "":
+        return 0.0
+    else:
+        return float(user_in) + recursive_total()
+    
+recursive_total()
