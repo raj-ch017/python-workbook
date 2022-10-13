@@ -1,0 +1,27 @@
+# author: @raj-ch017
+
+"""
+Excercise 63: Temperature Conversion Table
+
+Write a program that displays a temperature conversion table for degrees Celsius and
+degrees Fahrenheit. The table should include rows for all temperatures between 0 and 
+100 degrees Celsius that are multiples of 10 degrees Celsius. Include appropriate headings
+on your columns. The formula for converting between degrees Celsius and degrees Fahrenheit
+can be found on the internet.
+
+"""
+
+table_col = "{:<20} {:<20}".format("Temperature in C","Temperature in F")
+out_str = ""
+
+for i in range(len(table_col)):
+    out_str = out_str + "-"
+print(table_col)
+print(out_str)
+
+
+for temp in range(0,110,10):
+    tempF = (temp * 1.8) + 32
+    out_row = "{:<22} {:<22}".format(temp,tempF)
+    print(out_row)
+    print(out_str)
