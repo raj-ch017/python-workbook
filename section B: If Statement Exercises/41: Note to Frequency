@@ -1,0 +1,102 @@
+# author: @raj-ch017
+
+"""
+Exercise 41: Note to Frequency
+
+The following table lists an octave of music notes, beginning with middle C, along with
+their frequencies:
+
+    Note            Frequency (Hz)
+
+    C4                  261.63
+    D4                  293.66
+    E4                  329.63
+    F4                  349.23
+    G4                  392.00
+    A4                  440.00
+    B4                  493.88
+
+Begin by writing a program that reads the name of a note from the user and displays the note's
+frequency. Your program should support all of the notes listed previously.
+
+Once you have your program working correctly for the notes listed previously, you should add
+support for all of the notes from C0 to C8. While this could be done by adding many additional
+cases to your if statement, such a solution is cumbersome, inelegant and unacceptable for the
+purposes of this exercise. 
+Instead, you should exploit the relationship between notes in adjacent octaves. In particular,
+the frequency of any note in octave (n) is half the frequency of the corresponding note in 
+octave (n+1). 
+By using this relationship, you should be able to add support for the additional notes without adding additional cases to your if statement.
+"""
+note_C4 = 261.63
+note_D4 = 293.66
+note_E4 = 329.63
+note_F4 = 349.23
+note_G4 = 392.00
+note_A4 = 440.00
+note_B4 = 493.88
+
+user_input = input("Please enter a note: ")
+
+user_note = user_input[0]
+user_octave = user_input[-1]
+
+if user_note == 'C':
+    if user_octave == '4':
+        print("Note {} has frequency {} Hz".format(user_input,note_C4))     
+    else:
+        diff = int(user_octave) - 4
+        freq = (2 ** diff) * note_C4
+        print("Note {} has frequency {} Hz".format(user_input,round(freq,2))) 
+
+elif user_note == 'D':
+    if user_octave == '4':
+        print("Note {} has frequency {} Hz.".format(user_input,note_D4))
+    else:
+        diff = int(user_octave) - 4
+        freq = (2 ** diff) * note_D4
+        print("Note {} has frequency {} Hz.".format(user_input,round(freq,2)))
+
+elif user_note == 'E':
+    if user_octave == '4':
+        print("Note {} has frequency {} Hz.".format(user_input,note_E4))
+    else:
+        diff = int(user_octave) - 4
+        freq = (2 ** diff) * note_E4
+        print("Note {} has frequency {} Hz.".format(user_input,round(freq,2)))
+
+elif user_note == 'F':
+    if user_octave == "4":
+        print("Note {} has frequency {} Hz.".format(user_input,note_F4))
+    else:
+        diff = int(user_octave) - 4
+        freq = (2 ** diff) * note_F4
+        print("Note {} has frequency {} Hz.".format(user_input,round(freq,2)))
+
+elif user_note == 'G':
+    if user_octave == "4":
+        print("Note {} has frequency {} Hz.".format(user_input,note_G4))
+    else:
+        diff = int(user_octave) - 4
+        freq = (2 ** diff) * note_G4
+        print("Note {} has frequency {} Hz.".format(user_input,round(freq,2)))
+
+elif user_note == 'A':
+    if user_octave == '4':
+        print("Note {} has frequency {} Hz.".format(user_input,note_A4))
+    else:
+        diff = int(user_octave) - 4
+        freq = (2 ** diff) * note_A4
+        print("Note {} has frequency {} Hz.".format(user_input,round(freq,2)))
+
+elif user_note == 'B':
+    if user_octave == '4':
+        print("Note {} has frequency {} Hz.".format(user_input,note_B4))
+    else:
+        diff = int(user_octave) - 4
+        freq = (2 ** diff) * note_B4
+        print("Note {} has frequency {} Hz.".format(user_input,round(freq,2)))
+
+        
+      
+
