@@ -1,0 +1,57 @@
+# author: @raj-ch017
+
+"""
+Exercise 42: Frequency to Note
+
+In the previous question, you converted from note name to frequency.
+In this question, you will write a program that reversed that 
+process. Begin by reading a frequency from the user. If the 
+frequency is within one Hertz of a value listed in the table
+in previous question then report the name of the note. Otherwise, report that the frequency
+does not correspond to a known note. In this exercise, you only need to consider the notes 
+listed in the table. There is no need to consider notes from other octaves.
+
+ Note            Frequency (Hz)
+
+    C4                  261.63
+    D4                  293.66
+    E4                  329.63
+    F4                  349.23
+    G4                  392.00
+    A4                  440.00
+    B4                  493.88
+
+"""
+
+user_freq = float(input("Enter the frequency of any note: "))
+user_freq1 = round(user_freq,0)
+
+if user_freq1 > 494:
+    print("No corresponding middle note found!")
+    
+elif user_freq1 in range(492,495):
+    print("Frequency {} Hz has the corresponding note: B4".format(user_freq))
+    
+elif user_freq1 in range(439,442):
+    print("Frequency {} Hz has the corresponding note: A4".format(user_freq))
+    
+elif user_freq1 in range(391,394):
+    print("Frequency {} Hz has the corresponding note: G4".format(user_freq))
+    
+elif user_freq1 in range(348,351):
+    print("Frequency {} Hz has the corresponding note: F4".format(user_freq))
+    
+elif user_freq1 in range(328,331):
+    print("Frequency {} Hz has the corresponding note: E4".format(user_freq))
+    
+elif user_freq1 in range(292,295):
+    print("Frequency {} Hz has the corresponding note: D4".format(user_freq))
+    
+elif user_freq1 in range(260,263):
+    print("Frequency {} Hz has the corresponding note: C4".format(user_freq))
+    
+else:
+    print("No corresponding middle note found!")
+
+    
+
