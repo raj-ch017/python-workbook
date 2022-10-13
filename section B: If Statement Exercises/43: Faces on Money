@@ -1,0 +1,51 @@
+# author: @raj-ch017
+
+"""
+Excerise 43: Faces on Money
+
+It is common for images of a country's previous leader, or other individuals of historical
+significance, to appear on its money. The inidividuals that appear on banknotes in the US are:
+
+    individual                  Amount
+
+    George Washington           $1
+    Thomas Jefferson            $2
+    Abraham Lincoln             $5
+    Alexander Hamilton          $10
+    Andrew Jackson              $20
+    Ulysses S. Grant            $50
+    Benjamin Franklin           $100
+
+Write a program that begins by reading the denomination of a banknote from the user. Then
+your program should display the name of the individual that appears on the banknote
+of the entered amount. An appropriate error message should be displayed if no such note exists.
+
+"""
+
+user_in = int(input("Enter the amount (in $): "))
+
+if user_in == 1:
+    print("${} has George Washington.".format(user_in))
+    
+elif user_in == 2:
+    print("${} has Thomas Jefferson.".format(user_in))
+    
+elif user_in == 5:
+    print("${} has Abraham Lincoln.".format(user_in))
+    
+elif user_in == 10:
+    print("${} has Alexander Hamilton.".format(user_in))
+    
+elif user_in == 20:
+    print("${} has Andrew Jackson.".format(user_in))
+    
+elif user_in == 50:
+    print("${} has Ulysses S.Grant.".format(user_in))
+    
+elif user_in == 100:
+    print("${} has Benjamin Franklin.".format(user_in))
+    
+else:
+    print("No such denomination exists!")
+
+    
