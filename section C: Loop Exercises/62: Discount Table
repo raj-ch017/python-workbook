@@ -1,0 +1,34 @@
+# author: @raj-ch017
+
+"""
+Exercise 62: Discount Table
+
+A particular retailer is having a 60% off sale on a variety of discontinued products. The retailer would like to help its customers determine the reduced price of the merchandise by having a printed discount table on the table that shows the original prices and the prices
+after the discount has been applied. 
+
+Write a program that uses a loop to generate this table, showing the original prices, the
+discount amount, and the new price for purchases of $4.95, $9.95, $14.95, $19.95 and $24.95.
+Ensure that the discount amounts and the new prices are rounded to 2 decimal places when they are displayed.
+
+"""
+
+dis_rate = 0.6
+price_list = [4.95,9.95,14.95,19.95,24.95]
+count = 0
+
+table_col = "{:<12} {:<15} {:<18} {:<15}".format("Item","Original Price","Discount Amount","New Price")
+out_str = ""
+for i in range(len(table_col)):
+    out_str = out_str + "-"
+print(table_col)
+print(out_str)
+
+for item in price_list:
+    count += 1
+    dis_amt = dis_rate * item 
+    new_price = item - dis_amt
+    item_num = "Item {}".format(count)
+    table_row = "{:<12} ${:<15} ${:<15} ${:<15}".format(item_num,item,round(dis_amt,2),round(new_price,2))
+    print(table_row)
+    print(out_str)
+
