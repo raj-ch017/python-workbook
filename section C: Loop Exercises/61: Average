@@ -1,0 +1,27 @@
+# author: @raj-ch017
+
+"""
+Exercise 61: Average
+
+In this exercise, you will create a program that computes the average of a collection of values
+entered by the user. The user will enter 0 as a sentinel value to indicate that no further
+values will be provided. Your program should display an appropriate error message if the 
+first value entered by the user is 0.
+
+"""
+print("Enter number to calculate the average. Enter '0' to stop the calcuation")
+
+user_in = float(input("Enter a number: "))
+
+if user_in == 0:
+    print("0 isn't an appropriate first value.")
+else:
+    count = 1
+    the_sum = user_in
+    while (user_in != 0):
+        user_in = float(input("Enter a number: "))
+        if user_in != 0:
+            the_sum = the_sum + user_in
+            count += 1
+    the_avg = the_sum / count
+    print("The average is {}".format(the_avg))
