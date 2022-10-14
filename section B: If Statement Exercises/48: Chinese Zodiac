@@ -1,0 +1,85 @@
+# author: @raj-ch017
+
+"""
+Exercise 48: Chinese Zodiac
+
+The Chinese Zodiac assigns animals to years in a 12 year cycle. One 12 year cycle is shown in
+the table below. The pattern repeats from there, with 2012 being another year of the dragon,
+and 1999 being another year of the hare.
+
+    Year            Animal
+-------------------------------
+    2000            Dragon[0]
+-------------------------------
+    2001            Snake[1]
+-------------------------------
+    2002            Horse[2]
+-------------------------------
+    2003            Sheep[3]
+-------------------------------
+    2004            Monkey[4]
+-------------------------------
+    2005            Rooster[5]
+-------------------------------
+    2006            Dog[6]
+-------------------------------
+    2007            Pig[7]
+-------------------------------
+    2008            Rat[8]
+-------------------------------
+    2009            Ox[9]
+-------------------------------
+    2010            Tiger[10]
+-------------------------------
+    2011            Hare[11]
+-------------------------------
+
+Write a program that reads a year from the user and displays the animal associated with that year.
+Your program should work correctly for any year greater than or equal to zero, not just the
+ones listed in the table.
+
+"""
+
+#even_zodiac = ["Dragon","Horse","Monkey","Dog","Rat","Tiger"]
+#odd_zodiac = ["Snake","Sheep","Rooster","Pig","Ox","Hare"]
+
+user_year = int(input("Enter the year of birth: "))
+val = user_year % 12
+
+if val == 0:
+    print("Year {} has zodiac Monkey!".format(user_year))
+    
+elif val == 1:
+    print("Year {} has zodiac Rooster!".format(user_year))
+    
+elif val == 2:
+    print("Year {} has zodiac Dog!".format(user_year))
+    
+elif val == 3:
+    print("Year {} has zodiac Pig!".format(user_year))
+    
+elif val == 4:
+    print("Year {} has zodiac Rat!".format(user_year))
+    
+elif val == 5:
+    print("Year {} has zodiac Ox!".format(user_year))
+    
+elif val == 6:
+    print("Year {} has zodiac Tiger!".format(user_year))
+    
+elif val == 7:
+    print("Year {} has zodiac Hare!".format(user_year))
+    
+elif val == 8:
+    print("Year {} has zodiac Dragon!".format(user_year))
+    
+elif val == 9:
+    print("Year {} has zodiac Snake!".format(user_year))
+    
+elif val == 10:
+    print("Year {} has zodiac Horse!".format(user_year))
+    
+elif val == 11:
+    print("Year {} has zodiac Sheep!".format(user_year))
+
+    
