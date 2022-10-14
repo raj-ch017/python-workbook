@@ -1,0 +1,121 @@
+# author: @raj-ch017
+
+"""
+Exercise 47: Birth Date to Astrological Sign
+
+The horoscopes commonly reported in the newspapers use the position of the sun at the time 
+of one's birth to try and predict the future. This system of astrology divides the year into
+twelve zodiac signs, as outlined in the table below:
+
+        Zodiac Sign             Date range
+    --------------------------------------------
+        Capricorn               Dec 22 - Jan 19
+    --------------------------------------------
+        Aquarius                Jan 20 - Feb 18
+    --------------------------------------------
+        Pisces                  Feb 19 - Mar 20
+    --------------------------------------------
+        Aries                   Mar 21 - Apr 19
+    --------------------------------------------
+        Taurus                  Apr 20 - May 20
+    --------------------------------------------
+        Gemini                  May 21 - June 20
+    --------------------------------------------
+        Cancer                  June 21 - Jul 22
+    --------------------------------------------
+        Leo                     Jul 23 - Aug 22
+    --------------------------------------------
+        Virgo                   Aug 23 - Sep 22
+    --------------------------------------------
+        Libra                   Sep 23 - Oct 22
+    --------------------------------------------
+        Scorpio                 Oct 23 - Nov 21
+    --------------------------------------------
+        Sagittarius             Nov 22 - Dec 21
+    --------------------------------------------
+
+Write a program that asks the user to enter his or her birthday and day of birth. Then your
+program should report the user's zodiac sign as a part of an appropriate output message.
+
+"""
+
+user_month = input("Enter the month of birthday: ")
+user_day = int(input("Enter the day of birhtday: "))
+
+out_str = user_month + " " + str(user_day)
+
+if user_month == "January":
+    if user_day <= 19:
+        print("Zodiac sign for {} is Capricorn!".format(out_str))
+    else:
+        print("Zodiac sign for {} is Aquarius!".format(out_str))
+
+elif user_month == "February":
+    if user_day <= 18:
+        print("Zodiac sign for {} is Aquarius!".format(out_str))
+    else:
+        print("Zodiac sign for {} is Pisces!".format(out_str))
+
+elif user_month == "March":
+    if user_day <= 20:
+        print("Zodiac sign for {} is Pisces!".format(out_str))
+    else:
+        print("Zodiac sign for {} is Aries!".format(out_str))
+
+elif user_month == "April":
+    if user_day <= 19:
+        print("Zodiac sign for {} is Aries!".format(out_str))
+    else:
+        print("Zodiac sign for {} is Taurus!".format(out_str))
+
+elif user_month == "May":
+    if user_day <= 20:
+        print("Zodiac sign for {} is Taurus!".format(out_str))
+    else:
+        print("Zodiac sign for {} is Gemini!".format(out_str))
+
+elif user_month == "June":
+    if user_day <= 20:
+        print("Zodiac sign for {} is Gemini!".format(out_str))
+    else:
+        print("Zodiac sign for {} is Cancer!".format(out_str))
+
+elif user_month == "July":
+    if user_day <= 22:
+        print("Zodiac sign for {} is Cancer!".format(out_str))
+    else:
+        print("Zodiac sign for {} is Leo!".format(out_str))
+
+elif user_month == "August":
+    if user_day <= 22:
+        print("Zodiac sign for {} is Leo!".format(out_str))
+    else:
+        print("Zodiac sign for {} is Virgo!".format(out_str))
+
+elif user_month == "September":
+    if user_day <= 22:
+        print("Zodiac sign for {} is Virgo!".format(out_str))
+    else:
+        print("Zodiac sign for {} is Libra!".format(out_str))
+
+elif user_month == "October":
+    if user_day <= 22:
+        print("Zodiac sign for {} is Libra!".format(out_str))
+    else:
+        print("Zodiac sign for {} is Scorpio!".format(out_str))
+
+elif user_month == "November":
+    if user_day <= 21:
+        print("Zodiac sign for {} is Scorpio!".format(out_str))
+    else:
+        print("Zodiac sign for {} is Sagittarius!".format(out_str))
+
+elif user_month == "December":
+    if user_day <= 21:
+        print("Zodiac sign for {} is Sagittarius!".format(out_str))
+    else:
+        print("Zodiac sign for {} is Capricorn!".format(out_str))
+
+else:
+    print("Invalid date entered!")
+
