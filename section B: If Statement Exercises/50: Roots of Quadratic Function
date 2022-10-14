@@ -1,0 +1,47 @@
+# author: @raj-ch017
+
+"""
+Exercise 50: Roots of a Quadratic Function
+
+A univariate quadratic function has the form f(x) = a(x**2) + bx + c, where (a),(b) and (c) are
+constants, and (a) is non-zero. The roots of a quadratic function can be found by finding
+the values of (x) that satisfy the quadratic equation equalling a value of 0. A quadratic 
+equation function may have 0, 1 or 2 real roots. These roots can be computed using the
+quadratic formula, shown below:
+
+    root = ((-b) +- (b**2 - 4*a*c)**(0.5))/(2a)
+
+The portion of the expression under the square root sign is called the discriminant. If the
+discriminant is negative, then the quadratic equation does not have any real roots. If the 
+discriminant is 0, then the equation has one real root. Otherwise the equation has two real roots,
+and the expression must be evaluated twice, once using a plus sign, and once using a minus sign
+when computing the numerator.
+
+Write a program that computes the real roots of a quadratic function. Your program should begin
+by prompting the user for the values of (a), (b) and (c). Then it should display a message
+indicating the number of real roots, along with the values of the real roots (if any).
+
+"""
+
+coef_a = int(input("Enter the value of coefficient 'a': "))
+coef_b = int(input("Enter the value of coefficient 'b': "))
+coef_c = int(input("Enter the value of coefficient 'c': "))
+
+discrimant = (coef_b ** 2) - (4 * coef_a * coef_c)
+
+if discrimant >= 0:
+    positive_root = round(((-1 * coef_b) + (discrimant ** 0.5))/(2*coef_a),3)
+    negative_root = round(((-1 * coef_b) - (discrimant ** 0.5))/(2*coef_a),3)
+
+if discrimant < 0:
+    print("The equation has no real roots!")
+else:
+    if discrimant == 0:
+        print("The equation has 1 real root.")
+        print("The value of the root is {}".format(positive_root))
+    else:
+        print("The equation has 2 real roots.")
+        print("The value of root 1 is {}".format(positive_root))
+        print("The value of root 2 is {}".format(negative_root))
+
+        
