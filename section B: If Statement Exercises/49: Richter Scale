@@ -1,0 +1,63 @@
+# author: @raj-ch017
+
+"""
+Exercise 49: Richter Scale
+
+The following table contains earthquake magnitude ranges on the Richter scale and their
+descriptors:
+
+        Magnitude               Descriptor
+    ----------------------------------------
+        < 2.0                   Micro
+    ---------------------------------------
+        2 - < 3                 Very minor
+    ---------------------------------------
+        3 - < 4                 Minor
+    ---------------------------------------
+        4 - < 5                 Light
+    ---------------------------------------
+        5 - < 6                 Moderate
+    ---------------------------------------
+        6 - < 7                 Strong
+    --------------------------------------
+        7 - < 8                 Major
+    --------------------------------------
+        8 - < 10                Great
+    --------------------------------------
+        > 10                    Meteoric
+    --------------------------------------
+
+Write a program that reads a magnitude from the user and dsiplays the appropriate descriptor
+as a part of a meaningful message. For example, if the user enters 5.5, then your program 
+should indicate that a magnitude 5.5 earthquake is considered to be a moderate earthquake.
+
+"""
+
+user_in = float(input("Enter the magnitude of earthquake: "))
+
+if user_in < 2.0:
+    print("Magnitude {} earthquake is considered to be micro.".format(user_in))
+
+elif user_in < 3.0:
+    print("Magnitude {} earthquake is considered to be very minor.".format(user_in))
+
+elif user_in < 4.0:
+    print("Magnitude {} earthquake is considered to be minor.".format(user_in))
+
+elif user_in < 5.0:
+    print("Magnitude {} earthquake is considered to be light.".format(user_in))
+
+elif user_in < 6.0:
+    print("Magnitude {} earthquake is considered to be moderate.".format(user_in))
+
+elif user_in < 7.0:
+    print("Magnitude {} earthquake is considered to be strong.".format(user_in))
+
+elif user_in < 8.0:
+    print("Magnitude {} earthquake is considered to be major.".format(user_in))
+
+elif user_in < 10.0:
+    print("Magnitude {} earthquake is considered to be great.".format(user_in))
+
+else:
+    print("Magnitude {} earthquake is considered to be meteoric.".format(user_in))
