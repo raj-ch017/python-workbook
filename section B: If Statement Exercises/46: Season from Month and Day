@@ -1,0 +1,69 @@
+# author: @raj-ch017
+
+"""
+Exercise 46: Season from Month and Day
+
+The year is divided into four seasons: spring, summer, fall and winter. While the exact dates
+that the seasons change vary a little bit from year to year because of the way the calendar 
+is constructed, we will use the following dates for this exercise:
+
+        Season                  First Day
+        -----------------------------------
+        Spring                     March 20
+        -----------------------------------
+        Summer                      June 21
+        -----------------------------------
+        Fall                       September 22
+        -----------------------------------
+        Winter                     December 21
+
+Create a program that reads a month and a day from the user. The user will enter the name of the month as a string, followed by the day within the month as an integer. Then your program 
+should display the season associated with the date that was entered.
+
+"""
+
+user_month = input("Enter a month: ")
+user_day = int(input("Enter a date: "))
+
+out_str = user_month + " " + str(user_day)
+
+if user_day < 1 or user_day > 31:
+    print("Invalid day entered.")
+
+if user_month == "March":
+    if user_day < 20:
+        print("{} has winter season!".format(out_str))
+    else:
+        print("{} has spring season!".format(out_str))
+
+elif user_month == "April" or user_month == "May":
+    print("{} has spring season!".format(out_str))
+
+elif user_month == "June":
+    if user_day < 21:
+        print("{} has spring season!".format(out_str))
+    else:
+        print("{} has summer season!".format(out_str))
+
+elif user_month == "July" or user_month == "August":
+    print("{} has summer season!".format(out_str))
+
+elif user_month == "September":
+    if user_day < 22:
+        print("{} has summer season!".format(out_str))
+    else:
+        print("{} has fall season!".format(out_str))
+
+elif user_month == "October" or user_month == "November":
+    print("{} has fall season!".format(out_str))
+
+elif user_month == "December":
+    if user_day < 21:
+        print("{} has fall season!".format(out_str))
+    else:
+        print("{} has winter season!".format(out_str))
+
+else:
+    print("{} is winter season!".format(out_str))
+
+    
