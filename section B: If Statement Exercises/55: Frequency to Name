@@ -1,0 +1,47 @@
+# author: @raj-ch017
+
+"""
+Exercise 55: Frequency to Name
+
+Electromagnetic radiation can be classified into one of the 7 categories according to its 
+Frequency, as shown in the table below:
+
+        Name            Frequency Range (Hz)
+    ------------------------------------------------------
+        Radio waves     less than 3 * 10 ** 9
+    ------------------------------------------------------
+        Microwaves      3 * 10 ** 9 - 3 * 10 ** 12
+    ------------------------------------------------------
+        Infrared        3 * 10 ** 12 - 4.3 * 10 ** 14
+    ------------------------------------------------------
+        Visible         4.3 * 10 ** 14 - 7.5 * 10 ** 14
+    ------------------------------------------------------
+        Ultraviolet     7.5 * 10 ** 14 - 3 * 10 ** 17
+    ------------------------------------------------------
+        X - rays        3 * 10 ** 17 - 3 * 10 ** 19
+    ------------------------------------------------------
+        Gamma rays          3 * 10 ** 19 or more
+    ------------------------------------------------------
+
+Write a program that reads the frequency of the radiation from the user and displays the 
+appropriate name.
+
+"""
+
+user_in = float(input("Enter the frequency in hz: "))
+
+if user_in < (3 * 10 ** 9):
+    print("Frequency of {} Hz belongs to Radio waves".format(user_in))
+elif user_in >= (3 * 10 ** 9) and user_in < (3 * 10 ** 12):
+    print("Frequency of {} Hz belongs to Microwaves".format(user_in))
+elif user_in >= (3 * 10 ** 12) and user_in < (4.3 * 10 ** 14):
+    print("Frequency of {} Hz belongs to Infrared".format(user_in))
+elif user_in >= (4.3 * 10 ** 14) and user_in < (7.5 * 10 ** 14):
+    print("Frequency of {} Hz belongs to Visible Light".format(user_in))
+elif user_in >= (7.5 * 10 ** 14) and user_in < (3 * 10 ** 17):
+    print("Frequency of {} Hz belongs to Ultraviolet light".format(user_in))
+elif user_in >= (3 * 10 ** 17) and user_in < (3 * 10 ** 19):
+    print("Frequency of {} Hz belongs to X - rays".format(user_in))
+elif user_in >= (3 * 10 ** 19):
+    print("Frequency of {} Hz belongs to Gamma rays".format(user_in))
+
