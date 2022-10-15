@@ -1,0 +1,45 @@
+"""
+Exercise 54: Wavelengths to Visible Light
+
+The wavelength of visible light ranges from 380 to 750 nanometers (nm). While the spectrum is
+continous, it if often divided into 6 colors as shown below:
+
+        Color           Wavelength(nm)
+    ---------------------------------------
+        Violet          380 - < 450
+    ---------------------------------------
+        Blue            450 - < 495
+    ---------------------------------------
+        Green           495 - < 570
+    ---------------------------------------
+        Yellow          570 - < 590
+    ---------------------------------------
+        Orange          590 - < 620
+    ---------------------------------------
+        Red             620 - 750
+    ---------------------------------------
+
+Write a program that reads a wavelength from the user and reports its color. Display an appropriate error message if the wavelength entered by the user is outside of the visible
+spectrum.
+
+"""
+
+user_in = float(input("Enter the wavelength(in nm): "))
+user_in1 = round(user_in)
+
+if user_in >= 380 and user_in < 450:
+    print("Wavelength {} nm represents Violet!".format(user_in))
+elif user_in >= 450 and user_in < 495:
+    print("Wavelength {} nm represents Blue!".format(user_in))
+elif user_in >= 495 and user_in < 570:
+    print("Wavelength {} nm represents Green!".format(user_in))
+elif user_in >= 570 and user_in < 590:
+    print("Wavelength {} nm represents Yellow!".format(user_in))
+elif user_in >= 590 and user_in < 620:
+    print("Wavelength {} nm represents Orange!".format(user_in))
+elif user_in >= 620 and user_in <= 750:
+    print("Wavelength {} nm represents Red!".format(user_in))
+else:
+    print("Entered wavelength does not belong to visible spectrum.")
+
+
