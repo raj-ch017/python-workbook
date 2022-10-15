@@ -1,0 +1,55 @@
+# author: @raj-ch017
+
+"""
+Exercise 59: Is a License Plate Valid?
+
+In a particular jurisdiction, older license plates consist of three uppercase letters followed
+by three numbers. When all of the license plates following that pattern had been used, the
+format was changed to four numbers following by three uppercase letters.
+
+Write a program that begins by reading a string of characters from the user. Then your program
+should display a message indicating whether the characters are valid for an older style 
+license plate or a newer style license plate. Your program should display an appropriate 
+message if the string entered by the user is not valid for either style of license plate.
+
+"""
+
+user_in = input("Enter your license plate format: ")
+
+digit_list = ["0","1","2","3","4","5","6","7","8","9"]
+char_list = []
+
+for i in range(65,91):          #loop for preparing the upper case character list
+    char_list.append(chr(i))
+
+digit_count = 0
+char_count = 0
+
+for ele in user_in:
+    if ele in digit_list:
+        digit_count += 1
+    elif ele in char_list:
+        char_count += 1
+
+if user_in[0] in digit_list and user_in[-1] in char_list:
+    if digit_count == 4 and char_count == 3:
+        print("{} is valid for new style license plate.".format(user_in))
+    else:
+        print("{} is an invalid license plate format.".format(user_in))
+elif user_in[0] in char_list and user_in[-1] in digit_list:
+    if digit_count == 3 and char_count == 3:
+        print("{} is valid for old style license plate.".format(user_in))
+    else:
+        print("{} is an invalid license plate format.".format(user_in))
+else:
+    print("{} is an invalid license plate format.".format(user_in))
+
+"""
+Comment: The exercise belongs to "If statement" genre. Therefore, the solution is expected
+to use only "if" statements and no iterative constructs.
+
+However, that means hardcoding the solution by manually checking every character of the 
+input string, which can be done, but would lead to a lengthy solution.
+
+Hence, I used the looping construct to reduce the solution size.
+"""
