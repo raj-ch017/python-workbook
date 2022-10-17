@@ -1,0 +1,90 @@
+# author: @raj-ch017
+
+"""
+Exercise 67: Admission Price
+
+A particular zoo determines the price of admission based on the age of the guest. Guests of 
+2 years of age and less are admitted without a charge. Children between the age of 3 and 12
+years of age cost $14.00. Seniors aged 65 years and above cost $18.00. Admission for all
+other guests os $23.00.
+
+Create a program that begins by reading the ages of all of the guests in a group from the user
+with one age entered on each line. The user will enter a blank line to indicate that there
+are no more guests in the group. Then your program should display the admission cost for the
+group with an appropriate message. The cost should be displayed using two decimal places.
+
+"""
+
+age_list = []
+count = 1
+
+table_col = "{:<20} {:<20} {:<20}".format("Age Group","Age limit","Admission Cost")
+out_str = ""
+
+for i in range(len(table_col)):
+    out_str = out_str + "-"
+
+print(table_col)
+print(out_str)
+row1 = "{:<20} {:<20} {:<20}".format("Age Group A","Age <= 2","$0.0")
+print(row1)
+print(out_str)
+row2 = "{:<20} {:<20} {:<20}".format("Age Group B","Age: 3-12 years","$14.00")
+print(row2)
+print(out_str)
+row3 = "{:<20} {:<20} {:<20}".format("Age Group C","Age: 65 and over","$18.00")
+print(row3)
+print(out_str)
+row4 = "{:<20} {:<20} {:<20}".format("Age Group D","Age: 13-64","$23.00")
+print(row4)
+print(out_str)
+
+user_in = input("Enter the age of member {} : ".format(count))
+user_in = int(user_in)
+age_list.append(user_in)
+
+while (user_in != ""):
+    count += 1
+    user_in = input("Enter the age of member {} (blank to quit): ".format(count))
+    if user_in != "":
+        user_in = int(user_in)
+        age_list.append(user_in)
+    else:
+        count -= 1
+
+print()
+print("Your group has {} members.".format(count))
+
+age_group1 = 0          # number of members 2 or less
+age_group2 = 0          # number of members between 3 and 12
+age_group3 = 0          #number of members 65 and above
+age_group4 = 0          # number of members between 13 and 64
+
+total_cost = 0
+
+for peeps in age_list:
+    if peeps <= 2:
+        age_group1 += 1
+    elif peeps >= 3 and peeps <= 12:
+        age_group2 += 1
+        total_cost = total_cost + 14
+    elif peeps >= 65:
+        age_group3 += 1
+        total_cost = total_cost + 18
+    else:
+        age_group4 += 1
+        total_cost = total_cost + 23
+
+print()
+print("Your group has {} members belonging to age group A".format(age_group1))
+print()
+print("Your group has {} members belonging to age group B".format(age_group2))
+print("Cost of admission for all members belonging to age group B: ${}".format(round(age_group2*14)))
+print()
+print("Your group has {} members belonging to age group C".format(age_group3))
+print("Cost of admission for all members belonging to age group C: ${}".format(round(18*age_group3)))
+print()
+print("Your group has {} members belonging to age group C.".format(age_group4))
+print("Cost of admission for all members belonging to age group D is: ${}".format(round(age_group4*23)))
+print()
+print("Your total cost is: ${}".format(round(total_cost)))
