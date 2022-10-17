@@ -1,0 +1,41 @@
+# author: @raj-ch017
+
+"""
+Exercise 65: Compute the Perimeter of a Polygon
+
+Write a program that computes the perimeter of a polygon. Begin by reading the x and y
+values for the first point on the perimeter of the polygon from the user. Then continue
+reading pairs of (x) and (y) values until the user enters a blank line for the x-coordinate.
+
+Each time you read an additional coordinate you should compute the distance to the previous
+point and add it to the perimeter. When a blank line is entered for the x-coordinate your
+program should add the distance from the last point back to the first point to the perimeter.
+
+Then it should display the total perimeter. 
+
+"""
+
+x0_cord = float(input("Enter the x coordinate: "))
+y0_cord = float(input("Enter the y coordinate: "))
+total_dist = 0
+
+x1_cord = x0_cord   #initial point needs to be stored seperately 
+y1_cord = y0_cord   
+
+while (x1_cord != ""):
+    x2_cord = (input("Enter the x coordinate (blank to quit): "))
+    if (x2_cord != ""):
+        y2_cord = (input("Enter the y coordinate: "))
+        x2_cord = float(x2_cord)
+        y2_cord = float(y2_cord)
+        dist = ((x2_cord-x1_cord)**2 + (y2_cord-y1_cord)**2)**(0.5)
+        x1_cord = x2_cord
+        y1_cord = y2_cord
+        total_dist = total_dist + dist
+    else:
+        dist = ((x1_cord - x0_cord)**2 + (y1_cord - y0_cord)**2)**(0.5)
+        total_dist = total_dist + dist
+        x1_cord = x2_cord
+print("The perimeter of the polygon is: {} units".format(total_dist))
+
+
