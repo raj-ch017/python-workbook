@@ -1,0 +1,46 @@
+# author: @raj-ch017
+
+"""
+Exercise 69: Approximate pi
+
+    pi approximately equals:
+
+        3 + (4/2*3*4) - (4/4*5*6) + (4/6*7*8) - (4/8*9*10) + (4/10*11*12) .....
+
+Write a program that displays 15 approximations of pi. The first approximation should make
+use of only the first term from the infinite series. Each additional approximation displayed
+by your program should include one more term in the series, making it a better approximation
+of pi than any of the approximations displayed previously.
+
+"""
+
+num = 4
+den = 2
+count = 1
+series = 3
+term = 1
+
+num_of_approx = int(input("Enter the number of approximation you want: "))
+
+while (count <= num_of_approx):
+    if count == 1:
+        print("Approximation {} for pi is: {}".format(count,series))
+        count += 1
+        term += 1
+
+    else:
+       total_den = (den) * (den + 1) * (den + 2)
+       den = (den + 2)
+       series_term = num / total_den
+
+       if term % 2 == 0:
+        series = series + series_term
+       else:
+        series = series - series_term
+
+       print("Approximation {} for pi is: {}".format(count,series))
+       term += 1
+       count += 1
+
+
+
