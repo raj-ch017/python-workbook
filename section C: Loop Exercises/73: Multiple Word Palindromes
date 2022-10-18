@@ -1,0 +1,43 @@
+# author: @raj-ch017
+
+"""
+Exercise 73: Multiple Word Palindromes
+
+There are numerous phrases that are palindromes when spacing is ignored. Examples include 
+"go dog", "flee to me remote elf" and "some men interpret nine memos", among many others.
+Extend your solution to Exercise 72 so that it ignores spacing while determing whether or
+not a string is a palindrome. For an additional challenge, extend your solution so that 
+is also ignores punctuation marks and treats uppercase and lowercase letters as 
+equivalent.
+
+"""
+
+user_in = input("Enter your string: ")
+out_str = ""
+check_list = []
+check_str = ""
+
+for i in range(97,123):
+    check_list.append(chr(i))
+
+for ch in user_in:
+    if ch in check_list:
+        check_str = check_str + ch.lower()
+    else:
+        pass 
+
+
+for val in range(1,len(check_str)+1):
+    char = check_str[-1 * val]
+    out_str = out_str + char 
+
+print("Input string: {}".format(user_in))
+print("String only with letters: {}".format(check_str))
+print("String read backwards: {}".format(out_str))
+
+if out_str == check_str:
+    print("The string you entered is a palindrome.")
+else:
+    print("The string you entered is not a palindrome.")
+
+    
