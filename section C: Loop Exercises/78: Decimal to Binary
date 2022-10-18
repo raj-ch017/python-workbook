@@ -1,0 +1,41 @@
+# author: @raj-ch017
+
+"""
+Exercise 78: Decimal to Binary
+
+Write a program that converts a decimal (base 10) number to binary (base 2).
+
+Read the decimal number from the user as an integer and then uses the division algorithm
+shown below to perform the conversion. When the algorithm completes, result contains the 
+binary representation of the number. Display the result, along with an appropriate message.
+
+    Let result be an empty string.
+    Let q represent the number to convert 
+    repreat 
+        Set r equal to the remainder when q is divided by 2
+        Convert r to a string and add it to the beginning of result 
+        Divide q by 2, discarding any remainder, and store the result back into q
+    until q is 0
+
+"""
+
+user_in = int(input("Enter the base 10 number: "))
+out_user = user_in
+result = ""
+remain = 0
+out_str = ""
+
+while (user_in != 0):
+    remain = user_in % 2
+    result = result + str(remain)
+    user_in = user_in // 2
+
+for i in range(1,len(result)+1):
+    char = result[-1 * i]
+    out_str = out_str + char 
+
+print("The base 2 representation of {} is: {}".format(out_user,out_str))
+
+
+
+
