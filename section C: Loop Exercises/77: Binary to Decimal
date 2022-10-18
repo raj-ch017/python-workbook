@@ -1,0 +1,22 @@
+# author: @raj-ch017
+
+"""
+Exercise 77: Binary to Decimal 
+
+Write a program that converts a binary (base 2) number to a decimal number (base 10). Your 
+program should begin by reading the binary number from the user as a string. Then it should
+compute the equivalent decimal number by processing each digit in the binary number. 
+Finally, your program should display the equivalent decimal number with an appropriate message.
+
+"""
+
+user_in = input("Enter base 2 number: ")
+place = len(user_in) - 1
+decimal = 0
+
+
+for val in user_in:
+        decimal = decimal + (int(val) * (2 ** place))
+        place -= 1
+
+print("The base 10 representation of {} is {}".format(user_in,decimal))
