@@ -1,0 +1,59 @@
+# author: @raj-ch017
+
+"""
+Exercise 71: Caesar Cipher
+
+One of the first known examples of encryption was used by Julius Caesar. Caesar needed to
+provide written instructions to his generals, but he didn't want his enemies to learn his
+plans if the message slipped into their hands. As a result, he developed what later became
+known as Caesar Cipher.
+
+The idea behind this cipher is simple (and as a result, it provides no protection against 
+modern code breaking techniques). Each letter in the original message is shifted by 3 places.
+As a result, 'A' becomes 'D', 'B' becomes 'E', 'C' becomes 'F', etc. The last three letters 
+in the alphabet are wrapped around to the beginning: 'X' becomes 'A', 'Y' becomes 'B' and
+'Z' becomes 'C'. Non-letter characters are not modified by the cipher.
+
+Write a program that implements a Caesar Cipher. Allow the user to supply the message and the
+shift amount, and then display the shifted message. Ensure that your program encodes both 
+uppercase and lowercase letters. Your program should also support negative shift values so 
+that it can be used to both encode and decode messages.
+
+"""
+
+user_in = input("Enter your message: ")
+shift_type = int(input("Enter shift place value: "))
+
+out_str = ""
+
+check_listlower = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+check_listupper = []
+
+for i in check_listlower:
+    check_listupper.append(i.upper())
+
+
+for char in user_in:
+    if char in check_listlower or char in check_listupper:
+        the_val = ord(char)
+        new_val = the_val + shift_type
+        if char.isupper():
+            if new_val > 90:
+                diff = new_val - 90
+                new_val = 64 + diff
+            elif new_val < 65:
+                diff = 65 - new_val
+                new_val = 91 - diff
+        elif char.islower():
+            if new_val > 122:
+                diff = new_val - 122
+                new_val = 96 + diff
+            elif new_val < 97:
+                diff = 97 - new_val
+                new_val = 123 - diff 
+        out_str = out_str + chr(new_val)
+    else:
+        out_str = out_str + char
+
+print("Your encoded message is: {}".format(out_str))
+
