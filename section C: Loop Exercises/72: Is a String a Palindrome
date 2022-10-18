@@ -1,0 +1,29 @@
+# author: @raj-ch017
+
+"""
+Exercise 72: Is a String a Palindrome?
+
+A string is a palindrone if it is identical forward and backward. For example, "anna", "civic",
+"level" and "hannah" are all examples of palindromic words. 
+
+Write a program that reads a string from the user and uses a loop to determine whether or 
+not it is a palindrome. Display the result, including a meaningful message.
+
+"""
+
+user_in = input("Enter your string: ")
+
+out_string = ""
+
+for val in range(1,len(user_in)+1):
+    char = user_in[-1 * val]
+    out_string = out_string + char
+
+print("String entered: {}".format(user_in))
+print("String backward: {}".format(out_string))
+
+if out_string == user_in:
+    print("The string is a palindrome.")
+else:
+    print("The string is not a palindrome.")
+
