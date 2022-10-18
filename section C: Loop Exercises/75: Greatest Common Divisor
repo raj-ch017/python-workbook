@@ -1,0 +1,30 @@
+# author: @raj-ch017
+
+"""
+Exercise 75: Greatest Common Divisor
+
+The greatest common divisor of two positive integers, (n) and (m), is the largest number, (d)
+which divides evenly both into (n) and (m). There are several algorithms that can be used
+to solve this problem, including:
+
+    Initialize (d) to the smaller of (m) and (n).
+    While (d) does not evenly divide (m) or (d) does not evenly divide (n) do
+        Decrease the value of (d) by 1
+    Report (d) as the greatest common divisor of (n) and (m)
+
+Write a program that reads two positive integers from the user and uses this algorithm
+to determine and report their greatest common divisor.
+
+"""
+
+num1 = int(input("Enter a positive integer: "))
+num2 = int(input("Enter another positive integer: "))
+
+guess = min(num1,num2)
+
+while (num1 % guess != 0) or (num2 % guess != 0):
+    guess -= 1
+
+print("The Greatest Common Divisor for {} and {} is {}".format(num1,num2,guess))
+
+
