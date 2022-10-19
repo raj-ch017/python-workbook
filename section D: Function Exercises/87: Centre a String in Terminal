@@ -1,0 +1,31 @@
+# author: @raj-ch017
+
+"""
+Exercise 87: Centre a String in the Terminal
+
+Write a function that takes a string of characters as its first parameter, and the width of
+the terminal as its second parameter. Your function should return a new string that consists
+of the original string and the correct number of leading spaces so that the original string 
+will appear centered within the provided width when it is printed. Do not add any characters
+to the end of the string. Include a main program that demonstrates your function.
+
+"""
+
+width = 100
+
+def move_string(the_str,width):
+
+    if len(the_str) > width:
+        return the_str
+
+    else:
+        space = (width - len(the_str)) // 2
+        result = " " * space + the_str
+        return result
+
+
+def main():
+    print(move_string("A famous story",width))
+    print(move_string("by:",width))
+
+main()
