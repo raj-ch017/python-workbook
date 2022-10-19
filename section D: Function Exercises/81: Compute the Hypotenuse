@@ -1,0 +1,26 @@
+# author: @raj-ch017
+
+"""
+Exercise 81: Compute the Hypotenuse
+
+Write a function that takes the lengths of the two shorter sides of a right triangle as its
+parameters. Return the hypotenuse of the triangle, computed using Pythagorean Theorem, as
+the function's result. Include a main program that reads the lengths of shorter sides of a
+right triangle from the userm uses your function to compute the length of the hypotenuse 
+and display the reuslt.
+
+"""
+
+side1 = float(input("Enter shorter side 1 of triangle: "))
+side2 = float(input("Enter shorter side 2 of triangle: "))
+
+def hypotenuse(side1,side2):
+    term1 = (side1 ** 2)
+    term2 =(side2 ** 2)
+    hypo = (term1 + term2) ** (0.5)
+    return hypo
+
+side_length = hypotenuse(side1,side2)
+
+print("The hypotenuse for a triangle with side lengths {} unit and {} unit is {} units".format(side1,side2,side_length))
+
