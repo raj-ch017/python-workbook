@@ -1,0 +1,25 @@
+# author: @raj-ch017
+
+"""
+Exercise 84: Median of Three Values
+
+Write a function that takes three numbers as parameters, and returns the median value of 
+those parameters as its result. Include a main program that reads three values from the user
+and displays their median.
+
+"""
+
+num1 = int(input("Enter a number: "))
+num2 = int(input("Enter a number: "))
+num3 = int(input("Enter a number: "))
+
+def median(num1,num2,num3):
+    total = num1 + num2 + num3 
+    the_max = max(num1,num2,num3)
+    the_min = min(num1,num2,num3)
+    the_median = total - (the_max + the_min)
+    return the_median
+
+val = median(num1,num2,num3)
+print("The median value of {}, {} and {} is: {}".format(num1,num2,num3,val))
+
