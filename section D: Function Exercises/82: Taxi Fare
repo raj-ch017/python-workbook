@@ -1,0 +1,29 @@
+# author: @raj-ch017
+
+"""
+Exercise 82: Taxi Fare
+
+In a particular jurisdiction, taxi fares consist of a base fare of $4.00, plus $0.25 for every
+140m travelled. Write a functoin that takes the distance traveled (in kilometers) as it's only
+parameter and returns the total fare as it's only result. Write a main program that
+demonstrates the function.
+
+"""
+
+base_fare = 4
+
+dist = float(input("Enter the distance traveled (in km): "))
+
+def fare_calculate(dist):
+    dist_m = dist * 1000
+    dist_fare = 0.25 * (dist_m / 140)
+    total = base_fare + dist_fare
+    return total
+
+total_fare = fare_calculate(dist)
+print("Base fare is $4.00")
+print("Additional $0.25 charged for every 140m")
+print("Total fare: ${}".format(round(total_fare,2)))
+
+
+
