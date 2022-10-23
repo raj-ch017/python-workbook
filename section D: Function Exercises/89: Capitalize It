@@ -1,0 +1,47 @@
+# author: @raj-ch017
+
+"""
+Exercise 89: Capitalize It
+
+Many people do not use capital letters correctly, especially when typing on small devices like
+smart phones. In this exercise, you will write a function that capitalizes the appropriate
+characters in a string. A lowercase "i" should be replaced with an uppercase "I" if it both
+preceded and followed by a space. The first character in the string should also be capitalizedm
+as well as the first non-space character after ".", "!" and "?". 
+
+For example, if the function is provided with the string "what time do i have to be there? what's
+the address?" then it should return:
+
+    "What time do I have to be there? What's the address?" 
+
+Include a main program that reads a string from the user, capitalises it using your function
+and displays the result.
+
+"""
+
+def convertString(in_str):
+    out_str = ""
+
+    if in_str[0].islower():
+        out_str = out_str + in_str[0].upper() + in_str[1] 
+    else:
+        out_str = out_str + in_str[0] + in_str[1]
+
+    for index in range(2,len(in_str)):
+        if in_str[index] == "i" and in_str[index-1] == " " and in_str[index+1] == " ":
+            out_str = out_str + in_str[index].upper()
+        elif in_str[index-2] == "." or in_str[index-2] == "!" or in_str[index-2] == "?":
+            if index != len(in_str) - 1:
+                out_str = out_str + in_str[index].upper()
+        else:
+            out_str = out_str + in_str[index]
+
+    return out_str
+
+def main():
+    user_in = input("Enter your string: ")
+    result = convertString(user_in)
+    print("The converted string is: ")
+    print(result)
+
+main()
