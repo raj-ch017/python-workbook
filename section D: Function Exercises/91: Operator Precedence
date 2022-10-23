@@ -1,0 +1,37 @@
+# author: @raj-ch017
+
+"""
+Exercise 91: Operator Precedence
+
+Write a function named precedence that returns an integer representing the precedence of a 
+mathematical operator. A string containing the operator will be passed to the function as its
+only parameter. Your function should return 1 for + and -, 2 for * and /, 3 for (^).
+If the string passed to the function is not one of these operators then the function should 
+return (-1). Include a main program that reads an operator from the user and either displays
+the operator's precedence or an error message indicating that the input was not an operator.
+Your main program should only run when the file containing your solution has not been imported
+into another program. 
+
+"""
+
+def precedence(in_str):
+
+    if in_str == "+" or in_str == "-":
+        return 1
+    elif in_str == "*" or in_str == "/":
+        return 2
+    elif in_str == "^":
+        return 3
+    else:
+        return -1 
+
+def main():
+    user_in = input("Enter an operator: ")
+    result = precedence(user_in)
+
+    if result != (-1):
+        print("The operator precedence for {} is {}".format(user_in,result))
+    else:
+        print("Invalid operator entered as input!")
+
+main()
