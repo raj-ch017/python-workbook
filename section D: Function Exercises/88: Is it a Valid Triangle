@@ -1,0 +1,42 @@
+# author: @raj-ch017
+
+"""
+Exercise 88: Is it a Valid Triangle?
+
+If you have 3 straws, possibly of differing lengths, it may or may not be possible to lay them down so that they form a triangle when their ends are touching. For example, if all of 
+the straws have a length of 6 inches, then one can easily construct an equilateral triangle 
+using them. However, if one straw is 6 inches long, while the other two are each only 2 inches
+long, then a trinagle cannot be formed. In general, if any one length is greater than or equal
+to the sum of the other two then the lengths cannot be used to form a triangle. Otherwise,
+they can form a triangle.
+
+Write a function that determines whether or not three lengths can form a triangle. The
+function will take 3 parameters and return a Boolean result. In addition, write a function
+that reads 3 lengths from the user and demonstrates the behaviour of this function.
+
+"""
+
+def isTriangle(side1,side2,side3):
+    max_length = max(side1,side2,side3)
+    min_length = min(side1,side2,side3)
+    other_length = (side1 + side2 + side3) - (max_length + min_length)
+
+    if max_length >= (other_length + min_length):
+        return False
+    else:
+        return True
+
+def triangleCheck():
+    s1 = float(input("Enter side1 of triangle: "))
+    s2 = float(input("Enter side2 of triangle: "))
+    s3 = float(input("Enter side3 of triangle: "))
+
+    result = isTriangle(s1,s2,s3)
+
+    if result == True:
+        print("Side lengths of {} unit, {} unit and {} unit can be used to form a triangle.".format(s1,s2,s3))
+    else:
+        print("Side lengths of {} unit, {} unit and {} unit cannot form a triangle.".format(s1,s2,s3))
+
+
+triangleCheck()
