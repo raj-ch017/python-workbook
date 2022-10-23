@@ -1,0 +1,47 @@
+# author: @raj-ch017
+
+"""
+Exercise 90: Does a String Represent an Integer?
+
+In this exerise, you will write a function named isInteger that determinse whether or not 
+the characters in a string represent a valid integer. When determining if a string represents 
+an integer you should ignore any leading or trailing white space. Once this white space is 
+ignored, a string represents an integer if its length is at least 1 and it only contains digits,
+or if its first character is either + or - and the first character is followed by one or more
+characters, all of which are digits.
+
+Write a main program that reads a stirng from the user and reports whether or not it represents 
+an integer. Ensure that the main program will not run if the file containing your solution is
+imported into another program.
+
+"""
+
+def isInteger(in_str):
+    in_str = in_str.lstrip(" ")
+    in_str = in_str.rstrip(" ")
+
+    checker = False
+    check_list = ["0","1","2","3","4","5","6","7","8","9"]
+
+    if len(in_str) >= 1:
+        for chars in in_str:
+            if chars == "+" or chars == "-":
+                checker = True
+            elif chars in check_list:
+                checker = True
+            else:
+                checker = False
+    
+    return checker
+
+
+def main():
+    user_in = input("Enter your string: ")
+    result = isInteger(user_in)
+    if result == True:
+        print("The string {} does represent an integer string.".format(user_in))
+    else:
+        print("The string {} does not represent an integer string.".format(user_in))
+
+main()
+
