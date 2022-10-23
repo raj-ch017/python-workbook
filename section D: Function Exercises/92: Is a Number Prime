@@ -1,0 +1,37 @@
+# author: @raj-ch017
+
+"""
+Exercise 92: Is a Number Prime?
+
+A prime number is an integer greater than 1 that is only divisibly by one and itself.
+Write a function that determines whether or not its parameter is prime, returning True if it
+is, and False otherwise. Write a main program that reads an integer from the user and displays
+a message indicating whether or not it is prime. Ensure that the main program will not run 
+if the file containing your solution is imported into another program.
+
+"""
+
+def primeChecker(in_int):
+
+    if in_int > 1:
+        for val in range(2,in_int + 1):
+            if in_int % val == 0 and val != in_int:
+                return False
+                break
+        return True
+    else:
+        return "0"
+
+
+def main():
+    user_in = int(input("Enter an integer greater than 1: "))
+    checker = primeChecker(user_in)
+
+    if checker == True:
+        print("{} is a prime number!".format(user_in))
+    elif checker == False:
+        print("{} is not a prime number!".format(user_in))
+    elif checker == "0":
+        print("You have entered an invalid integer for checking prime!")
+
+main()
