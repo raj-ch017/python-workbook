@@ -1,0 +1,59 @@
+# author: @raj-ch017
+
+"""
+Exercise 95: Random License Plate
+
+In a particular jurisdiction, older license plate must consist of three letters followed by
+three numbers. When all of the license plates following that pattern had been used, the format
+was changed to four numbers followed by three letters.
+
+Write a function that generates a random license plate. Your function should have approximately equal odds of generating a sequence of characters for an old license plate or 
+a new license plate. Write a main program that calls your function and displays the randomly
+generated license plate.
+
+"""
+import random
+
+# helper function to create a list of UPPER case letters
+
+letter_list = []
+
+for i in range(65,91):
+    letter_list.append(chr(i))
+
+def generateLicense():
+    new_old = random.randint(0,1) # 0: old plate ; 1: new plate
+    the_str = ""
+
+    if new_old == 0:
+        for index in range(0,6):
+            if index < 3:
+                val = random.randint(0,len(letter_list))
+                char = letter_list[val]
+                the_str = the_str + char
+            else:
+                val = random.randint(0,9)
+                the_str = the_str + str(val)
+
+    elif new_old == 1:
+        for index in range(0,7):
+            if index < 4:
+                val = random.randint(0,9)
+                the_str = the_str + str(val)
+            else:
+                val = random.randint(0,len(letter_list))
+                char = letter_list[val]
+                the_str = the_str + char
+
+    return the_str, new_old
+
+
+def main():
+    result, val = generateLicense()
+    print("Your license plate is:",result)
+    if val == 0:
+        print("Your license plate has old format")
+    else:
+        print("Your license plate has new format")
+
+main() 
